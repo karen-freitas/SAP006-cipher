@@ -20,12 +20,11 @@ header{
    justify-content: space-between;
    width:100%;
    box-sizing: border-box;
-   padding: 0 5em;
+   padding: 0 5% 0 10%;
    
 }
 
 #initial{
-   padding-left: 5%;
    padding-top: 8%;
    width:40%;
 
@@ -50,6 +49,11 @@ h3{
    
 }
 
+p{
+   line-height: 1.6;
+   text-align: justify;
+}
+
 #initial p{
    margin-top: 2em;
 }
@@ -72,8 +76,91 @@ figure img{
    background-color:#37C7CD;
    padding:10px 20px;
    border: none;
+   text-decoration: none;
+   
+   
 }
 
+.btn a{
+   text-decoration: none;
+   color:white;
+   
+}
+
+#benefits{
+   background-color:#37C7CD ;
+   display:flex;
+   padding: 0 10% 6% 10%;
+   justify-content: space-between;
+
+
+
+}
+
+.container{
+   background-color: white;
+   width:23%;
+   padding:1% 3% 1% 3%;
+   text-align:center;
+   box-sizing: border-box;
+  
+}
+
+h5{
+   color: #3770DE;
+}
+
+.container img{
+   width:40%;
+}
+
+.container p{
+   font-style: italic;
+   font-size: 0.8em;
+   text-align: center;
+}
+
+#details{
+   padding:4% 18%;
+}
+
+
+h2{
+   font-family: 'Oswald', sans-serif;
+   margin-top:0;
+   font-size: 3em;
+   font-weight: 300;
+   color: #3770DE;
+   text-align: center;
+   
+}
+
+
+
+.stepsContainer{
+   display: flex;
+   align-items: center;
+   margin-bottom: 3%;
+
+}
+
+
+.stepsImg{
+   width:40px;
+   margin-left: 0;
+   padding-right: 1%;
+   
+}
+
+.stepsImg img{
+   width:35px;
+}
+
+
+#start{
+   text-align: center;
+   margin-top: 4%;
+}
 
 
 #texts{
