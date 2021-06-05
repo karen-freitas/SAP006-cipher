@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Codificar e decodificar textos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <section id="texts">
+
+      <form action=""  id="encodeForm">
+        <textarea name="" id="textToEncode" cols="60" rows="20" placeholder="Digite aqui o texto que deseja codificar"></textarea>
+        <br>
+        <label for="encodeOffset">Insira sua chave de encriptação</label> <input type="text " id="encodeOffset" class="offset">
+        <br>
+        <button type="submit" id="encodeBtn" >Codificar</button>
+      </form>
+
+      <form action="" id="decodeForm">
+        <textarea name="" id="textToDecode" cols="60" rows="20" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
+        <br>
+        <label for="decodeOffset">Insira sua chave de desencriptação</label> <input type="text" id="decodeOffset" class="offset">
+        <br>
+        <button type="submit" id="decodeBtn">Decodificar</button>
+      </form>
+
+    </section>
+
+  </main>
+  <script src="index.js" type="module"></script>
+</body>
+</html>
