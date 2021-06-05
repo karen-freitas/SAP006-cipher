@@ -6,28 +6,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <section id="texts">
+
+    <header id="hdEncode">
+      <figure class="homepage"><a href="index.html"><img src="img/homepage.png" alt=""></a></figure>
+      <h2 id="title">MEU DIÁRIO SECRETO</h2>
+     
+    </header>
+
+    <main id="texts">
 
       <form action=""  id="encodeForm">
-        <textarea name="" id="textToEncode" cols="60" rows="20" placeholder="Digite aqui o texto que deseja codificar"></textarea>
-        <br>
-        <label for="encodeOffset">Insira sua chave de encriptação</label> <input type="text " id="encodeOffset" class="offset">
-        <br>
-        <button type="submit" id="encodeBtn" >Codificar</button>
+        <label for="" class="subtitle">TEXTO ORIGINAL</label>
+        <br><br>
+        <textarea name="" id="textToEncode" cols="65" rows="15" placeholder="Digite aqui o texto que deseja codificar"></textarea>
+        <br><br>
+        <label for="encodeOffset" class="key">Chave:</label> <input type="number" id="encodeOffset" class="offset">
+        <br><br>
+        <div class="divBtn"><button type="submit" id="encodeBtn" class="btn">CODIFICAR</button></div>
       </form>
+      <figure id="arrows">
+        <img src="img/arrow.png" alt="" id="rightArrow" class="arrow">
+        <img src="img/arrow.png" alt="" id="leftArrow" class="arrow">
+      </figure>
 
       <form action="" id="decodeForm">
-        <textarea name="" id="textToDecode" cols="60" rows="20" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
-        <br>
-        <label for="decodeOffset">Insira sua chave de desencriptação</label> <input type="text" id="decodeOffset" class="offset">
-        <br>
-        <button type="submit" id="decodeBtn">Decodificar</button>
+        <label for="" class="subtitle">TEXTO CODIFICADO</label>
+        <br><br>
+        <textarea name="" id="textToDecode" cols="65" rows="15" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
+        <br><br>
+        <label for="decodeOffset" class="key">Chave:</label> <input type="number" id="decodeOffset" class="offset" width="10px">
+        <br><br>
+        <div class="divBtn"><button type="submit" id="decodeBtn" class="btn">DECODIFICAR</button></div>
+        
       </form>
 
-    </section>
+    </main>
 
-  </main>
   <script src="index.js" type="module"></script>
 </body>
 </html>
