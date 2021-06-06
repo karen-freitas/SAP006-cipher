@@ -12,7 +12,7 @@ const decodeForm = document.getElementById("decodeForm");
 encodeForm.onsubmit= function (evento){
     let text = textToEncode.value;
     let offset = parseInt(document.getElementById("encodeOffset").value);
-    let encodedText = cipher.encode(text,offset);
+    let encodedText = cipher.encode(offset, text);
     textToDecode.value= encodedText;
     evento.preventDefault();
 }
@@ -21,7 +21,7 @@ encodeForm.onsubmit= function (evento){
 decodeForm.onsubmit= function (evento){
     let text = textToDecode.value;
     let offset = parseInt(document.getElementById("decodeOffset").value);
-    let decodedText = cipher.decode(text,offset);
+    let decodedText = cipher.decode(offset, text);
     textToEncode.value=decodedText;
     evento.preventDefault();
 }

@@ -1,5 +1,9 @@
 const cipher = {
-  encode : function (string, offset){
+  encode : function (offset, string){
+    if((typeof offset!=="number")||(typeof string!=="string")){
+      throw new TypeError
+    }
+
     let decodedText = "";
     
     for(let i=0; i<string.length; i++){
@@ -23,7 +27,11 @@ const cipher = {
 
   },
 
-  decode : function (string, offset){
+  decode : function (offset, string){
+    if((typeof offset!=="number")||(typeof string!=="string")){
+      throw new TypeError
+    }
+    
     let encodedText = "";
     for(let i=0; i<string.length; i++){
       let code = string.charCodeAt(i);
