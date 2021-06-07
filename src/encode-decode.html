@@ -18,10 +18,11 @@
       <form action=""  id="encodeForm">
         <label for="" class="subtitle">TEXTO ORIGINAL</label>
         <br><br>
-        <textarea name="" id="textToEncode" cols="65" rows="15" placeholder="Digite aqui o texto que deseja codificar"></textarea>
+        <textarea name="" id="textToEncode" cols="50" rows="15" placeholder="Digite aqui o texto que deseja codificar"></textarea>
         <br><br>
         <label for="encodeOffset" class="key">Chave:</label> <input type="number" id="encodeOffset" class="offset">
-        <br><br>
+        <br>
+        <p class="errorMsg" id="errorEncode"></p>
         <div class="divBtn"><button type="submit" id="encodeBtn" class="btn">CODIFICAR</button></div>
       </form>
       <figure id="arrows">
@@ -32,10 +33,11 @@
       <form action="" id="decodeForm">
         <label for="" class="subtitle">TEXTO CODIFICADO</label>
         <br><br>
-        <textarea name="" id="textToDecode" cols="65" rows="15" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
+        <textarea name="" id="textToDecode" cols="50" rows="15" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
         <br><br>
         <label for="decodeOffset" class="key">Chave:</label> <input type="number" id="decodeOffset" class="offset" width="10px">
-        <br><br>
+        <br>
+        <p class="errorMsg" id="errorDecode"></p>
         <div class="divBtn"><button type="submit" id="decodeBtn" class="btn">DECODIFICAR</button></div>
         
       </form>

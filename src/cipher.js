@@ -37,7 +37,6 @@ const cipher = {
       let code = string.charCodeAt(i);
       if(code>=65 && code <=90){
 
-        //let newCode = ((code+65-offset) % 26) + 65;
         let newCode = 90-((90-code+offset) % 26);
         let newCharacter = String.fromCharCode(newCode);
         encodedText = encodedText.concat(newCharacter);
@@ -59,8 +58,3 @@ const cipher = {
 
 export default cipher;
 
-// //(((codigodaletra-codigo1aLetraASC+desloc)%tamanhodoalfabeto)+cod1aletraAsc
-// //cod1aletra = 65
-// //String.fromCharCode = acha a letra pelo código
-//                                                       +65
-// //codigoASC => codigo 0 a 25 => desloco => giro => códigoASC
