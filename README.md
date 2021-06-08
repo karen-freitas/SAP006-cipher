@@ -43,9 +43,11 @@ O primeiro protótipo da página principal foi feito por meio da ferramenta Figm
 ![Protótipo 1](src/img/Figma_1.png)
 
 
-A paleta de cores utilizada foi priorizando o azul e verde, que transmitem tranquilidade, harmonia e segurança.
+
+A paleta de cores utilizada priorizou as cores azul e verde, que transmitem tranquilidade, harmonia e segurança.
 
 ![Paleta](src/img/Paleta.png)
+
 
 
 Uma tela inicial foi acrescentada para falar sobre os benefícios e funcionamento da ferramenta. As imagens seguintes correspondem à interface final:
