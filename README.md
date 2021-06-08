@@ -5,6 +5,9 @@ O **Meu Diário Secreto** é uma aplicação web que permite ao usuário manter 
 
 * [1. Proposta do projeto](#1-proposta-do-projeto)
 * [2. Tema](#2-tema)
+* [3. Usuários](#3-usuários)
+* [4. UX e UI](#4-ux-e-ui)
+* [5. Conteúdos aprendidos](#2-conteúdos-aprendidos)
 
 
 ***
@@ -24,7 +27,7 @@ A proposta do **Meu Diário Secreto** é possibilitar esse desabafo e permitir a
 
 Pessoas que desejam expressar através da escrita seus pensamentos, ideias, desabafar, falar sobre sentimentos e acontecimentos, mas querem  manter o sigilo do conteúdo de seus textos.
 
-## 4. Desenvolvimento do layout
+## 4. UX e UI
 
 Primeiramente, foi definido que o layout da página principal de encriptação e desencriptaçao contaria com duas caixas de textos:
 1. A caixa da esquerda:
@@ -36,16 +39,23 @@ Primeiramente, foi definido que o layout da página principal de encriptação e
     - Na encriptação,  mostrar o resultado da mensagem decifrada.
 
 O primeiro protótipo da página principal foi feito por meio da ferramenta Figma:
+
 ![Protótipo 1](src/img/Figma_1.png)
+
 
 A paleta de cores utilizada foi priorizando o azul e verde, que transmitem tranquilidade, harmonia e segurança.
 
 ![Paleta](src/img/Paleta.png)
 
-Uma tela inicial foi acrescentada para falar sobre os benefícios e funcionamento da ferramenta. As telas seguintes correspondem à interface final:
-![Tela Inicial](src/img/screenshot-page1.png)
-![Tela Codificar/Decodificar](src/img/screenshot-page2.png)
 
+Uma tela inicial foi acrescentada para falar sobre os benefícios e funcionamento da ferramenta. As imagens seguintes correspondem à interface final:
+
+**Tela Inicial:**
+![Tela Inicial](src/img/screenshot-page1.png)
+
+**Tela de codificação e decodificação:**
+
+![Tela Codificar/Decodificar](src/img/screenshot-page2.png)
 
 ## 5. Conteúdos aprendidos
 ### HTML e CSS
@@ -58,13 +68,12 @@ Uma tela inicial foi acrescentada para falar sobre os benefícios e funcionament
 *  Uso de seletores do DOM.
 *  Manipular eventos do DOM.
 *  [Manipulação dinâmica do DOM.](https://developer.mozilla.org/pt-BR/docs/DOM/Referencia_do_DOM/Introdu%C3%A7%C3%A3o)
-(appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
 
 *  Manipulação de strings.
-*  Uso de condicionais (if-else | switch | operador ternário)
-*  Uso de laços _(loops)_ (for | for..in | for..of | while)
+*  Uso de condicionais.
+*  Uso de laços _(loops)_.
 *  Uso de funções (parâmetros | argumentos | valor de retorno)
 *  Declaração correta de variáveis (const & let)
 
