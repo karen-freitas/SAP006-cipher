@@ -13,61 +13,92 @@ const decodeForm = document.getElementById("decodeForm");
 
 encodeForm.onsubmit = function (evento) {
     let text = textToEncode.value;
-    let desloc= document.getElementById("encodeOffset").value
+    let desloc = document.getElementById("encodeOffset").value
     let offset = parseInt(desloc);
 
-    if(text=="" && desloc=="" ){
-        errorEncode.innerHTML="*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
-        textToDecode.value="";
+    if (text == "" && desloc == "") {
+        errorEncode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
+        textToDecode.value = "";
         evento.preventDefault();
 
-    }else if(text==""){
-        errorEncode.innerHTML="*O campo <b>Texto Original</b> precisa ser preenchido";
-        textToDecode.value="";
+    } else if (text == "") {
+        errorEncode.innerHTML = "*O campo <b>Texto Original</b> precisa ser preenchido";
+        textToDecode.value = "";
         evento.preventDefault();
 
-    }else if(desloc=="" || desloc=="0"){
-        errorEncode.innerHTML="*O campo <b>Chave</b> precisa ser preenchido com um número maior que 0";
-        textToDecode.value="";
+    } else if (desloc == "") {
+        errorEncode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido";
+        textToDecode.value = "";
         evento.preventDefault();
 
-    } else{
-        let encodedText = cipher.encode(offset, text);
-        textToDecode.value = encodedText;
-        errorEncode.innerHTML="";
-        errorDecode.innerHTML="";
-        evento.preventDefault();
+    } else {
+        if (offset > 0) {
+            let encodedText = cipher.encode(offset, text);
+            textToDecode.value = encodedText;
+            errorEncode.innerHTML = "";
+            errorDecode.innerHTML = "";
+            evento.preventDefault();
+
+        } else if (offset < 0) {
+            let encodedText = cipher.decode((-offset), text);
+            textToDecode.value = encodedText;
+            errorEncode.innerHTML = "";
+            errorDecode.innerHTML = "";
+            evento.preventDefault();
+
+        } else {
+            errorEncode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido com um número diferente de zero";
+            textToDecode.value = "";
+            evento.preventDefault();
+
+        }
+
 
     }
-   
+
 }
 
 
 decodeForm.onsubmit = function (evento) {
     let text = textToDecode.value;
-    let desloc= document.getElementById("decodeOffset").value
+    let desloc = document.getElementById("decodeOffset").value
     let offset = parseInt(desloc);
-    if(text=="" && desloc=="" ){
-        errorDecode.innerHTML="*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
-        textToEncode.value=""
+    if (text == "" && desloc == "") {
+        errorDecode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
+        textToEncode.value = ""
         evento.preventDefault();
 
-    }else if(text==""){
-        errorDecode.innerHTML="*O campo <b>Texto Original</b> precisa ser preenchido";
-        textToEncode.value=""
+    } else if (text == "") {
+        errorDecode.innerHTML = "*O campo <b>Texto Original</b> precisa ser preenchido";
+        textToEncode.value = ""
         evento.preventDefault();
 
-    }else if(desloc=="" || desloc=="0"){
-        errorDecode.innerHTML="*O campo <b>Chave</b> precisa ser preenchido com um número maior que 0";
-        textToEncode.value=""
+    } else if (desloc == "") {
+        errorDecode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido";
+        textToEncode.value = ""
         evento.preventDefault();
 
-    } else{
-        let decodedText = cipher.decode(offset, text);
-        textToEncode.value = decodedText;
-        errorDecode.innerHTML="";
-        errorEncode.innerHTML="";
-        evento.preventDefault();
+    } else {
+        if (offset > 0) {
+            let decodedText = cipher.decode(offset, text);
+            textToEncode.value = decodedText;
+            errorDecode.innerHTML = "";
+            errorEncode.innerHTML = "";
+            evento.preventDefault();
+
+        } else if(offset<0){
+            let decodedText = cipher.encode((-offset), text);
+            textToEncode.value = decodedText;
+            errorDecode.innerHTML = "";
+            errorEncode.innerHTML = "";
+            evento.preventDefault();
+
+        }else{
+            errorDecode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido";
+            textToEncode.value = "*O campo <b>Chave</b> precisa ser preenchido com um número diferente de zero";
+            evento.preventDefault();
+        }
+
 
     }
 
