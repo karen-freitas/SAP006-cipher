@@ -38,6 +38,7 @@ encodeForm.onsubmit = function (evento) {
             errorEncode.innerHTML = "";
             errorDecode.innerHTML = "";
             evento.preventDefault();
+            
 
         } else if (offset < 0) {
             let encodedText = cipher.decode((-offset), text);
