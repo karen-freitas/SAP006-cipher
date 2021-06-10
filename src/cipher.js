@@ -8,6 +8,7 @@ const cipher = {
 
     for (let i = 0; i < string.length; i++) {
       let code = string.charCodeAt(i);
+
       if (code >= 65 && code <= 90) {
         let newCode = ((code - 65 + offset) % 26) + 65;
         let newCharacter = String.fromCharCode(newCode);
@@ -18,31 +19,29 @@ const cipher = {
         let newCharacter = String.fromCharCode(newCode);
         decodedText = decodedText.concat(newCharacter);
 
+        //pontuações, caracteres e números
       } else if (code >= 32 && code <= 64) {
         let newCode = ((code - 32 + offset) % 33) + 32;
         let newCharacter = String.fromCharCode(newCode);
         decodedText = decodedText.concat(newCharacter);
 
+        //pontuações, caracteres e números
       } else if (code >= 91 && code <= 96) {
         let newCode = ((code - 91 + offset) % 6) + 91;
         let newCharacter = String.fromCharCode(newCode);
         decodedText = decodedText.concat(newCharacter);
 
+        //acentos, crase e outros caracteres
       } else if (code >= 123 && code <= 254) {
         let newCode = ((code - 123 + offset) % 132) + 123;
         let newCharacter = String.fromCharCode(newCode);
         decodedText = decodedText.concat(newCharacter);
-
-
-
 
       } else {
         decodedText = decodedText.concat(string.charAt(i));
       }
     }
     return decodedText
-
-
   },
 
   decode: function (offset, string) {
@@ -53,8 +52,8 @@ const cipher = {
     let encodedText = "";
     for (let i = 0; i < string.length; i++) {
       let code = string.charCodeAt(i);
-      if (code >= 65 && code <= 90) {
 
+      if (code >= 65 && code <= 90) {
         let newCode = 90 - ((90 - code + offset) % 26);
         let newCharacter = String.fromCharCode(newCode);
         encodedText = encodedText.concat(newCharacter);
@@ -71,7 +70,6 @@ const cipher = {
         encodedText = encodedText.concat(newCharacter);
 
         //acentos, crase e outros caracteres
-
       } else if (code >= 91 && code <= 96) {
         let newCode = 96 - ((96 - code + offset) % 6);
         let newCharacter = String.fromCharCode(newCode);
@@ -88,7 +86,6 @@ const cipher = {
       }
     }
     return encodedText
-
   }
 
 };

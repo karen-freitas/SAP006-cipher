@@ -1,52 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Meu diário secreto - Codificar e decodificar textos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-    <header id="hdEncode">
-      <figure class="homepage"><a href="index.html"><img src="img/homepage.png" alt=""></a></figure>
-      <h2 id="title">MEU DIÁRIO SECRETO</h2>
-     
-    </header>
+  <header id="hdEncode">
+    <figure class="homepage"><a href="index.html"><img src="img/homepage.png" alt=""></a></figure>
+    <h2 id="title">MEU DIÁRIO SECRETO</h2>
+  </header>
 
-    <main id="texts">
+  <main id="texts">
 
-      <form action=""  id="encodeForm">
-        <label for="" class="subtitle">TEXTO ORIGINAL</label>
-        <br><br>
-        <textarea name="" id="textToEncode" cols="50" rows="15" placeholder="Digite aqui o texto que deseja codificar"></textarea>
-        <br><br>
-        <label for="encodeOffset" class="key">Chave:</label> <input type="number" id="encodeOffset" class="offset">
-        <br>
-        <p class="errorMsg" id="errorEncode"></p>
-        <div class="divBtn"><button type="submit" id="encodeBtn" class="btn">CODIFICAR</button></div>
-      </form>
-      <figure id="arrows">
-        <img src="img/arrow.png" alt="" id="rightArrow" class="arrow">
-        <img src="img/arrow.png" alt="" id="leftArrow" class="arrow">
-      </figure>
+    <form action="" id="encodeForm">
+      <label for="" class="subtitle">TEXTO ORIGINAL</label>
+      <div class="copy" id="copyEncode">
+        <img src="img/copia.png" alt="Copiar texto">
+        <span>Copiar</span>
+      </div>
+      <textarea name="" id="textToEncode" cols="50" rows="14"
+        placeholder="Digite aqui o texto que deseja codificar"></textarea>
+      <br><br>
+      <label for="encodeOffset" class="key">Chave:</label> <input type="number" id="encodeOffset" class="offset">
+      <br>
+      <p class="errorMsg" id="errorEncode"></p>
+      <div class="divBtn"><button type="submit" id="encodeBtn" class="btn btnCode">CODIFICAR</button></div>
 
-      <form action="" id="decodeForm">
-        <label for="" class="subtitle">TEXTO CODIFICADO</label>
-        <br><br>
-        <textarea name="" id="textToDecode" cols="50" rows="15" placeholder="Digite aqui o texto que deseja decodificar"></textarea>
-        <br><br>
-        <label for="decodeOffset" class="key">Chave:</label> <input type="number" id="decodeOffset" class="offset" width="10px">
-        <br>
-        <p class="errorMsg" id="errorDecode"></p>
-        <div class="divBtn"><button type="submit" id="decodeBtn" class="btn">DECODIFICAR</button></div>
-        
-      </form>
+    </form>
 
-    </main>
+    <figure id="arrows">
+      <img src="img/arrow.png" alt="" id="rightArrow" class="arrow">
+      <img src="img/arrow.png" alt="" id="leftArrow" class="arrow">
+    </figure>
+
+    <form action="" id="decodeForm">
+      <label for="" class="subtitle">TEXTO CODIFICADO</label>
+      <div class="copy" id="copyDecode">
+        <img src="img/copia.png" alt="Copiar texto">
+        <span>Copiar</span>
+      </div>
+      <textarea name="" id="textToDecode" cols="50" rows="14"
+        placeholder="Digite aqui o texto que deseja decodificar"></textarea>
+      <br><br>
+      <label for="decodeOffset" class="key">Chave:</label> <input type="number" id="decodeOffset" class="offset"
+        width="10px">
+      <br>
+      <p class="errorMsg" id="errorDecode"></p>
+      <div class="divBtn"><button type="submit" id="decodeBtn" class="btn btnCode">DECODIFICAR</button></div>
+      
+    </form>
+
+  </main>
 
   <script src="index.js" type="module"></script>
- 
-  </script>
-  
+
+
+
 </body>
+
 </html>
