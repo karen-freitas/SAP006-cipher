@@ -6,15 +6,15 @@ let errorEncode = document.getElementById("errorEncode");
 let errorDecode = document.getElementById("errorDecode");
 
 
-const encodeForm = document.getElementById("encodeForm");
-const decodeForm = document.getElementById("decodeForm");
+const encodeBtn = document.getElementById("encodeBtn");
+const decodeBtn = document.getElementById("decodeBtn");
 
 
-
-encodeForm.onsubmit = function (evento) {
+encodeBtn.onclick = function (evento) {
     let text = textToEncode.value;
     let desloc = document.getElementById("encodeOffset").value
     let offset = parseInt(desloc);
+    
 
     if (text == "" && desloc == "") {
         errorEncode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
@@ -53,14 +53,11 @@ encodeForm.onsubmit = function (evento) {
             evento.preventDefault();
 
         }
-
-
     }
-
 }
 
 
-decodeForm.onsubmit = function (evento) {
+decodeBtn.onclick = function (evento) {
     let text = textToDecode.value;
     let desloc = document.getElementById("decodeOffset").value
     let offset = parseInt(desloc);
@@ -99,11 +96,26 @@ decodeForm.onsubmit = function (evento) {
             textToEncode.value = "*O campo <b>Chave</b> precisa ser preenchido com um número diferente de zero";
             evento.preventDefault();
         }
-
-
     }
-
 }
+
+//função copiar
+
+const copyEncode = document.getElementById("copyEncode");
+const copyDecode = document.getElementById("copyDecode");
+
+
+copyEncode.addEventListener("click", (evento) =>{
+    evento.preventDefault()
+    textToEncode.select();
+    document.execCommand("copy") 
+})
+
+copyDecode.addEventListener("click", (evento) =>{
+    evento.preventDefault()
+    textToDecode.select();
+    document.execCommand("copy") 
+})
 
 
 
