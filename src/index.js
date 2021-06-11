@@ -92,8 +92,8 @@ decodeBtn.onclick = function (evento) {
             evento.preventDefault();
 
         }else{
-            errorDecode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido";
-            textToEncode.value = "*O campo <b>Chave</b> precisa ser preenchido com um número diferente de zero";
+            errorDecode.innerHTML = "*O campo <b>Chave</b> precisa ser preenchido com um número diferente de zero";
+            textToEncode.value = "";
             evento.preventDefault();
         }
     }
