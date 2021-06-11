@@ -6,36 +6,33 @@ const cipher = {
 
     let decodedText = "";
 
+    function crypt(menor, tamanho, code){
+      let newCode = ((code - menor + offset) % tamanho) + menor;
+      let newCharacter = String.fromCharCode(newCode);
+      decodedText = decodedText.concat(newCharacter);
+
+    }
+
     for (let i = 0; i < string.length; i++) {
       let code = string.charCodeAt(i);
 
       if (code >= 65 && code <= 90) {
-        let newCode = ((code - 65 + offset) % 26) + 65;
-        let newCharacter = String.fromCharCode(newCode);
-        decodedText = decodedText.concat(newCharacter);
+        crypt(65 , 26, code)
 
       } else if (code >= 97 && code <= 122) {
-        let newCode = ((code - 97 + offset) % 26) + 97;
-        let newCharacter = String.fromCharCode(newCode);
-        decodedText = decodedText.concat(newCharacter);
+        crypt(97 , 26, code)
 
         //pontuações, caracteres e números
       } else if (code >= 32 && code <= 64) {
-        let newCode = ((code - 32 + offset) % 33) + 32;
-        let newCharacter = String.fromCharCode(newCode);
-        decodedText = decodedText.concat(newCharacter);
-
-        //pontuações, caracteres e números
-      } else if (code >= 91 && code <= 96) {
-        let newCode = ((code - 91 + offset) % 6) + 91;
-        let newCharacter = String.fromCharCode(newCode);
-        decodedText = decodedText.concat(newCharacter);
+        crypt(32 , 33, code)
 
         //acentos, crase e outros caracteres
+      } else if (code >= 91 && code <= 96) {
+        crypt(91 , 6, code)
+
+        //demais caracteres
       } else if (code >= 123 && code <= 254) {
-        let newCode = ((code - 123 + offset) % 132) + 123;
-        let newCharacter = String.fromCharCode(newCode);
-        decodedText = decodedText.concat(newCharacter);
+        crypt(123 , 132, code)
 
       } else {
         decodedText = decodedText.concat(string.charAt(i));
@@ -49,37 +46,33 @@ const cipher = {
       throw new TypeError
     }
 
+    function decrypt(maior, tamanho, code){
+      let newCode = maior - ((maior - code + offset) % tamanho);
+      let newCharacter = String.fromCharCode(newCode);
+      encodedText = encodedText.concat(newCharacter);
+    }
+
     let encodedText = "";
     for (let i = 0; i < string.length; i++) {
       let code = string.charCodeAt(i);
 
       if (code >= 65 && code <= 90) {
-        let newCode = 90 - ((90 - code + offset) % 26);
-        let newCharacter = String.fromCharCode(newCode);
-        encodedText = encodedText.concat(newCharacter);
+        decrypt(90 , 26, code)
 
       } else if (code >= 97 && code <= 122) {
-        let newCode = 122 - ((122 - code + offset) % 26);
-        let newCharacter = String.fromCharCode(newCode);
-        encodedText = encodedText.concat(newCharacter);
+        decrypt( 122, 26, code)
 
         //pontuações, caracteres e números
       } else if (code >= 32 && code <= 64) {
-        let newCode = 64 - ((64 - code + offset) % 33);
-        let newCharacter = String.fromCharCode(newCode);
-        encodedText = encodedText.concat(newCharacter);
-
+        decrypt( 64, 33, code)
         //acentos, crase e outros caracteres
       } else if (code >= 91 && code <= 96) {
-        let newCode = 96 - ((96 - code + offset) % 6);
-        let newCharacter = String.fromCharCode(newCode);
-        encodedText = encodedText.concat(newCharacter);
+        decrypt( 96, 6, code)
+        
 
       } else if (code >= 123 && code <= 254) {
-        let newCode = 254 - ((254 - code + offset) % 132);
-        let newCharacter = String.fromCharCode(newCode);
-        encodedText = encodedText.concat(newCharacter);
-
+        decrypt( 254, 132, code)
+      
 
       } else {
         encodedText = encodedText.concat(string.charAt(i));

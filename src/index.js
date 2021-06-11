@@ -14,6 +14,7 @@ encodeBtn.onclick = function (evento) {
     let text = textToEncode.value;
     let desloc = document.getElementById("encodeOffset").value
     let offset = parseInt(desloc);
+    
 
     if (text == "" && desloc == "") {
         errorEncode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
