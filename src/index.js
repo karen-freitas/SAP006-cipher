@@ -1,20 +1,16 @@
 import cipher from './cipher.js';
 
-let textToEncode = document.getElementById("textToEncode");
-let textToDecode = document.getElementById("textToDecode");
-let errorEncode = document.getElementById("errorEncode");
-let errorDecode = document.getElementById("errorDecode");
-
-
+const textToEncode = document.getElementById("textToEncode");
+const textToDecode = document.getElementById("textToDecode");
+const errorEncode = document.getElementById("errorEncode");
+const errorDecode = document.getElementById("errorDecode");
 const encodeBtn = document.getElementById("encodeBtn");
 const decodeBtn = document.getElementById("decodeBtn");
-
-
-encodeBtn.onclick = function (evento) {
-    let text = textToEncode.value;
-    let desloc = document.getElementById("encodeOffset").value
-    let offset = parseInt(desloc);
     
+encodeBtn.addEventListener("click", (evento) =>{
+    const text = textToEncode.value;
+    const desloc = document.getElementById("encodeOffset").value
+    const offset = parseInt(desloc);
 
     if (text == "" && desloc == "") {
         errorEncode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
@@ -38,7 +34,6 @@ encodeBtn.onclick = function (evento) {
             errorEncode.innerHTML = "";
             errorDecode.innerHTML = "";
             evento.preventDefault();
-            
 
         } else if (offset < 0) {
             let encodedText = cipher.decode((-offset), text);
@@ -54,13 +49,13 @@ encodeBtn.onclick = function (evento) {
 
         }
     }
-}
+});
 
-
-decodeBtn.onclick = function (evento) {
-    let text = textToDecode.value;
-    let desloc = document.getElementById("decodeOffset").value
-    let offset = parseInt(desloc);
+decodeBtn.addEventListener("click", (evento) =>{
+    const text = textToDecode.value;
+    const desloc = document.getElementById("decodeOffset").value
+    const offset = parseInt(desloc);
+    
     if (text == "" && desloc == "") {
         errorDecode.innerHTML = "*Os campos <b>Texto Original</b> e <b>Chave</b> precisam ser preenchidos";
         textToEncode.value = ""
@@ -97,9 +92,7 @@ decodeBtn.onclick = function (evento) {
             evento.preventDefault();
         }
     }
-}
-
-//função copiar
+});
 
 const copyEncode = document.getElementById("copyEncode");
 const copyDecode = document.getElementById("copyDecode");
