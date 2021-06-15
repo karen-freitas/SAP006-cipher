@@ -10,9 +10,9 @@ const cipher = {
       return newCharacter
     }
 
+    let decodedText = "";
     for (let i = 0; i < string.length; i++) {
       let code = string.charCodeAt(i);
-      let decodedText = "";
       let character;
 
       if (code >= 65 && code <= 90) {
@@ -54,10 +54,11 @@ const cipher = {
       return newCharacter
     }
 
+    let encodedText = "";
     for (let i = 0; i < string.length; i++) {
     
       let code = string.charCodeAt(i);
-      let encodedText = "";
+      let character;
 
       if (code >= 65 && code <= 90) {
         character = decrypt(90 , 26, code, offset)
